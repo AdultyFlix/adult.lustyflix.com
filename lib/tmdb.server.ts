@@ -1,8 +1,8 @@
 "use server"
 
 const TMDB_API_KEY = process.env.TMDB_API_KEY
-// const TMDB_BASE_URL = "https://api.themoviedb.org/3"
-const TMDB_BASE_URL = "https://adult-api-lustyflix-com.vercel.app"
+const TMDB_BASE_URL = "https://api.themoviedb.org/3"
+// const TMDB_BASE_URL = "https://adult-api-lustyflix-com.vercel.app"
 
 interface TMDBMovie {
   id: number
@@ -107,8 +107,8 @@ function transformMovie(movie: TMDBMovie) {
     title: movie.title,
     year: new Date(movie.release_date).getFullYear(),
     rating: Math.round(movie.vote_average * 10) / 10,
-    // image: movie.backdrop_path ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}` : "/placeholder.svg",
-    image: movie.backdrop_path ? `${movie.backdrop_path}` : "/placeholder.svg",
+    image: movie.backdrop_path ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}` : "/placeholder.svg",
+    // image: movie.backdrop_path ? `${movie.backdrop_path}` : "/placeholder.svg",
     description: movie.overview,
   }
 }
